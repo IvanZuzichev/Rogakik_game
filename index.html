@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+        body, html { height: 100%; margin: 0; padding: 0; }
+        body { background-color: #000000; color: #ffffff; font-family: Arial, sans-serif; }
+        h1 { font-family: "Playfair Display"; font-size: 30px; padding: 10px 0px; margin: 0px; text-align: center; }
+        .container { display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .field-box { border: 2px solid #d0d0d0; margin-bottom: 20px; }
+        .field { position: relative; width: 2000px; height: 1200px; overflow: hidden; }
+        .field .tile { position: absolute; width: 50px; height: 50px; background-size: 100%; z-index: 5; }
+       .field .tileW { background-image: url(images/tile-W.png); }
+.field .tileE { background-image: url(images/tile-E.png); z-index: 10; }
+.field .tileP { background-image: url(images/tile-P.png); z-index: 10; }
+.field .tileHP { background-image: url(images/tile-HP.png); z-index: 9; }
+.field .tileSW { background-image: url(images/tile-SW.png); z-index: 9; }
+        .field .tile .health { background-color: #ff0000; z-index: 11; position: absolute; left: 0px; top: 0px; height: 5px; }
+        .field .tileP .health { background-color: #00ff00; }
+        .info-panel { margin-bottom: 20px; text-align: center; }
+        .info-panel div { margin: 5px 0; font-size: 18px; }
+        .controls { text-align: center; margin-top: 20px; }
+        .controls p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Игровое поле</h1>
+        
+        <div class="info-panel">
+            <div>Здоровье: <span id="health">100</span>/100</div>
+            <div>Сила атаки: <span id="attack-power">10</span></div>
+            <div>Зелья: <span id="potions">0</span> | Мечи: <span id="swords">0</span></div>
+        </div>
+        
+        <div class="field-box">
+            <div class="field"></div>
+        </div>
+        
+        <div class="controls">
+            <p>Управление: WASD - движение, Пробел - атака</p>
+            <p>Собирайте зелья (синие) для здоровья и мечи (желтые) для увеличения силы атаки</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
